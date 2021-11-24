@@ -4,6 +4,7 @@ public class Basket {
     private String items = "";
     private int totalPrice = 0;
     private int limit;
+    private double totalWeight = 0;
 
     public Basket() {
         increaseCount(1);
@@ -30,49 +31,64 @@ public class Basket {
         Basket.count = Basket.count + count;
     }
 
-    public void add(String name, int price) {
-        add(name, price, 1);
-    }
-
-    public void add(String name, int price, int count) {
+    public void add(String name, int price, int count, double weight) {
         boolean error = false;
         if (contains(name)) {
             error = true;
         }
-
         if (totalPrice + count * price >= limit) {
             error = true;
         }
-
         if (error) {
             System.out.println("Error occured :(");
             return;
         }
-
         items = items + "\n" + name + " - " +
-            count + " шт. - " + price;
+                count + " шт. - " + price + " руб. ";
+        if (weight > 0) {
+            items = items + weight + " кг.";
+        }
         totalPrice = totalPrice + count * price;
+        totalWeight = totalWeight + weight;
     }
 
-    public void clear() {
-        items = "";
-        totalPrice = 0;
+    public void add(String name, int price, int count) {
+        add(name, price, count, 0);
     }
 
-    public int getTotalPrice() {
-        return totalPrice;
+    public void add(String name, int price) {
+        add(name, price, 1, 0);
     }
 
-    public boolean contains(String name) {
-        return items.contains(name);
-    }
 
-    public void print(String title) {
-        System.out.println(title);
-        if (items.isEmpty()) {
-            System.out.println("Корзина пуста");
-        } else {
-            System.out.println(items);
+        public void clear () {
+            items = "";
+            totalPrice = 0;
+            totalWeight = 0;
+        }
+
+        public int getTotalPrice () {
+            return totalPrice;
+        }
+
+        public double getTotalWeight() {
+            return totalWeight;
+        }
+
+    public boolean contains (String name){
+            return items.contains(name);
+        }
+
+        public void print (String title){
+            System.out.println(title);
+            if (items.isEmpty()) {
+                System.out.println("Корзина пуста");
+            } else {
+                System.out.println(items);
+            }
+            System.out.println("Общий вес товаров " + getTotalWeight() + " кг.");
+            System.out.println("Общая стоимость товаров " + getTotalPrice() + " руб.");
+            System.out.println("\n==========================\n");
         }
     }
-}
+
