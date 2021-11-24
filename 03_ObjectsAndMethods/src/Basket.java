@@ -86,8 +86,8 @@ public class Basket {
             } else {
                 System.out.println(items);
             }
-            System.out.println("Общий вес товаров " + getTotalWeight() + " кг.");
-            System.out.println("Общая стоимость товаров " + getTotalPrice() + " руб.");
+            System.out.println("Общий вес товаров " + totalWeight + " кг.");
+            System.out.println("Общая стоимость товаров " + totalPrice + " руб.");
             System.out.println("\n==========================\n");
         }
     }

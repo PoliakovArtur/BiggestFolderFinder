@@ -9,8 +9,10 @@ public class Main {
         vasyaBasket.add("Сахар", 54, 1, 1);
         vasyaBasket.add("Кофе", 235, 1);
         vasyaBasket.print("Корзина Васи");
-        vasyaBasket.clear();
-        vasyaBasket.print("Корзина Васи");
+
+        System.out.println();
+        System.out.println(vasyaBasket.getTotalWeight());
+
 
     }
 }
