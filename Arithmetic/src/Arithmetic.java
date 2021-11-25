@@ -29,3 +29,4 @@ public class Arithmetic {
         return number0ne;
     }
 }
+
