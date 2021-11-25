@@ -1,12 +1,16 @@
 public class Printer {
 
-    public String queue;
+    public String queue = "";
     public int amountPages;
-    public static int amountPagesAllTime;
+    public int amountPrintedPages;
 
     public void append(String text, String name, int amountPages) {
-        this.amountPages = amountPages;
-        queue = name + "\n" + text;
+        this.amountPages += amountPages;
+        if (name == "") {
+            queue = queue + "\n" + text + "\n";
+            return;
+        }
+            queue = queue + "\n" +  name + "\n" + text + "\n";
     }
 
     public void append(String text, String name) {
@@ -25,12 +29,12 @@ public class Printer {
         return amountPages;
     }
 
-    public int getPrintPagesCountAllTime () {
-        return amountPagesAllTime;
+    public int getAmountPrintedPages() {
+        return amountPrintedPages;
     }
 
     public void print() {
-        amountPagesAllTime = amountPagesAllTime + amountPages;
+        amountPrintedPages += amountPages;
         System.out.println(queue);
         clear();
     }
