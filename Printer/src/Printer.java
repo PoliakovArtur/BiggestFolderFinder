@@ -2,7 +2,7 @@ public class Printer {
 
     public String queue;
     public int amountPages;
-    public static int amountPagesAllTime = 0;
+    public static int amountPagesAllTime;
 
     public void append(String text, String name, int amountPages) {
         this.amountPages = amountPages;
@@ -32,8 +32,7 @@ public class Printer {
     public void print() {
         amountPagesAllTime = amountPagesAllTime + amountPages;
         System.out.println(queue);
-        queue = "";
-        amountPages = 0;
+        clear();
     }
 
     public void clear() {
