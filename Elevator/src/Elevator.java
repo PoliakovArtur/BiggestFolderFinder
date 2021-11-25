@@ -41,5 +41,6 @@ public class Elevator {
             return;
         }
         System.out.println("Вы находитесь на " + getCurrentFloor() + " этаже");
+
     }
 }
