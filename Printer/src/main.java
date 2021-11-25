@@ -20,3 +20,4 @@ public class main {
         System.out.println("\nКоличество страниц за все время работы принтера " + textOne.getPrintPagesCountAllTime());
     }
 }
+
