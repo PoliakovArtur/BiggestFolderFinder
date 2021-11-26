@@ -14,7 +14,6 @@ public class main {
                 continue;
             }
             elevator.move(floor);
-
         }
     }
 }
