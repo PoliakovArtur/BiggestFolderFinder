@@ -14,6 +14,7 @@ public class Main {
         petyaBasket.print("Корзина Васи");
 
         System.out.println(Basket.getAllStaticVars());
+
     }
 }
 

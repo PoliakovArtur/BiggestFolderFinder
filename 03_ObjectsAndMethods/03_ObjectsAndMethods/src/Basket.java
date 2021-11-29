@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class Basket {
 
     private static int count = 0;
@@ -37,14 +39,15 @@ public class Basket {
         totalItems = totalItems + count;
     }
 
-    public static double calculateAveragePrice() {
-        return totalValue / totalItems;
+    public static String calculateAveragePrice() {
+        double averagePrice = (double) totalValue / (double) totalItems;
+        return String.format("%.2f", averagePrice);
     }
 
-    public static double calculateAverageBasketPrice() {
-        return totalValue / count;
+    public static String calculateAverageBasketPrice() {
+        double averageBasketPrice = (double) totalValue / (double) count;
+        return String.format("%.2f", averageBasketPrice);
     }
-
 
     public void add(String name, int price, int count, double weight) {
         boolean error = false;
