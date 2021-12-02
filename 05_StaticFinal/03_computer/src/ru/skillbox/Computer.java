@@ -3,11 +3,11 @@ package ru.skillbox;
 public class Computer {
     private final String vendor;
     private final String name;
-    private final Cpu cpu;
-    private final Ram ram;
-    private final DataStorage dataStorage;
-    private final Monitor monitor;
-    private final Keyboard keyboard;
+    private Cpu cpu;
+    private Ram ram;
+    private DataStorage dataStorage;
+    private Monitor monitor;
+    private Keyboard keyboard;
 
     public Computer(String vendor, String name, Cpu cpu, Ram ram, DataStorage dataStorage, Monitor monitor, Keyboard keyboard) {
         this.vendor = vendor;
@@ -26,24 +26,24 @@ public class Computer {
                 keyboard.getWeight();
     }
 
-    public Computer setCpu(Cpu cpu) {
-        return new Computer(vendor, name, cpu, ram, dataStorage, monitor, keyboard);
+    public void setCpu(Cpu cpu) {
+        this.cpu = cpu;
     }
 
-    public Computer setRam(Ram ram) {
-        return new Computer(vendor, name, cpu, ram, dataStorage, monitor, keyboard);
+    public void setRam(Ram ram) {
+        this.ram = ram;
     }
 
-    public Computer setDataStorage(DataStorage dataStorage) {
-        return new Computer(vendor, name, cpu, ram, dataStorage, monitor, keyboard);
+    public void setDataStorage(DataStorage dataStorage) {
+        this.dataStorage = dataStorage;
     }
 
-    public Computer setScreen(Monitor monitor) {
-        return new Computer(vendor, name, cpu, ram, dataStorage, monitor, keyboard);
+    public void setMonitor(Monitor monitor) {
+        this.monitor = monitor;
     }
 
-    public Computer setKeyboard(Keyboard keyboard) {
-        return new Computer(vendor, name, cpu, ram, dataStorage, monitor, keyboard);
+    public void setKeyboard(Keyboard keyboard) {
+        this.keyboard = keyboard;
     }
 
     public String getVendorAndName() {

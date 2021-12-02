@@ -13,10 +13,10 @@ public class Main {
 
         System.out.println(computer);
 
-        DataStorage dataStorage1 = new DataStorage(DataStorageType.SSD, 242, 6);
+        DataStorage dataStorage1 = new DataStorage(DataStorageType.SSD, 240, 6);
 
-        Computer computer1 = computer.setDataStorage(dataStorage1);
+        computer.setDataStorage(dataStorage1);
 
-        System.out.println(computer1);
+        System.out.println(computer);
     }
 }
