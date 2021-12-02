@@ -80,3 +80,4 @@ public class Computer {
                 "\nОбщий Вес Компьютера:" + getComputerWeight() + "\n";
     }
 }
+
