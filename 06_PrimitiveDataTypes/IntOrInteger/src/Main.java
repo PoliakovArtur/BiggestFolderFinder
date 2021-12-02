@@ -8,6 +8,7 @@ public class Main {
         //  С помощью цикла и преобразования чисел в символы найдите все коды
         //  букв русского алфавита — заглавных и строчных, в том числе буквы Ё.
 
+<<<<<<< HEAD
         String alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
         for (int i = 0; i < 66; i++) {
             System.out.println((int) alphabet.charAt(i) + " - " + alphabet.charAt(i));
@@ -19,3 +20,7 @@ public class Main {
 
 
 
+=======
+    }
+}
+>>>>>>> origin/master
