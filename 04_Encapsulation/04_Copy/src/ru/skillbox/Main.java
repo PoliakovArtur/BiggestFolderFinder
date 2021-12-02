@@ -13,12 +13,15 @@ public class Main {
 
         Dimensions dimensions2 = dimensions1.setHeight(30);
 
-        Loads load2  = load1.setDimensions(dimensions2);
+        System.out.println(load1);
+
 
         Loads load3 = load1.setDeliveryAddress("ул. Пушкина, д.1, кв. 33");
 
+        load1 = load3;
+
         System.out.println(load1);
-        System.out.println(load2);
+
         System.out.println(load3);
     }
 }
