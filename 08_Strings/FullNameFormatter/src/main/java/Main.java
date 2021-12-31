@@ -13,17 +13,20 @@ public class Main {
     public static String getPersonInfo(String input) {
         int spaceCount = 0;
         String errorMessage = "Введенная строка не является ФИО";
-
         for (int i = 0; i < input.length(); i++) {
-            if (Character.isDigit(input.charAt(i))) {
+            char symbol = input.charAt(i);
+            boolean isRus = (symbol >= 'А') && (symbol <= 'я');
+            boolean isLegalSymbol = (symbol == '-') || (symbol == 'ё') || (symbol == 'Ё');
+            boolean isSpace = symbol == ' ';
+            if (!isRus && !isLegalSymbol && !isSpace) {
                 return errorMessage;
             }
-            if (input.charAt(i) == ' ') {
+            if (isSpace) {
                 spaceCount++;
             }
         }
 
-        if(spaceCount != 2) {
+        if (spaceCount != 2) {
             return errorMessage;
         }
 
@@ -37,7 +40,7 @@ public class Main {
         start = input.lastIndexOf(' ') + 1;
         String patronymic = input.substring(start);
 
-        return  "Фамилия: " + surname + System.lineSeparator() +
+        return "Фамилия: " + surname + System.lineSeparator() +
                 "Имя: " + name + System.lineSeparator() +
                 "Отчество: " + patronymic;
     }
