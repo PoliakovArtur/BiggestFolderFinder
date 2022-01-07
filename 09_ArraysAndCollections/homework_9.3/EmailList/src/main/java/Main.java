@@ -19,15 +19,34 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
+        EmailList emailList = new EmailList();
+
         while (true) {
             String input = scanner.nextLine();
-            if (input.equals("0")) {
-                break;
+            String[] split = input.split("\\s");
+
+            if (split.length > 2) {
+                System.out.println(WRONG_EMAIL_ANSWER);
+                continue;
             }
-            
-            //TODO: write code here
-            
+
+            switch (split[0]) {
+                case "ADD" -> {
+                    if (split.length == 1) {
+                        System.out.println(WRONG_EMAIL_ANSWER);
+                    }
+                    else {
+                        emailList.add(split[1]);
+                    }
+                }
+                case "LIST" -> {
+                    for (String email : emailList.getSortedEmails()) {
+                        System.out.println(email);
+                    }
+                }
+                default -> System.out.println("Неизвестная команда");
+            }
         }
     }
 }
+
