@@ -13,7 +13,7 @@ public class Main {
             String command = scanner.nextLine();
             String[] split = command.split("\\s");
 
-            if (split.length < 2) {
+            if ((split.length < 2) && !(split[0].equals("LIST"))) {
                 System.out.println(ERROR_MESSAGE);
                 continue;
             }
@@ -38,7 +38,7 @@ public class Main {
 
                 case "EDIT" -> {
                     if (!split[1].matches(regex) || split.length == 2) {
-                        System.out.println(TodoList.TODO_NOT_EXIST);
+                        System.out.println(ERROR_MESSAGE);
                         break;
                     }
                     int start = command.indexOf(split[2]);

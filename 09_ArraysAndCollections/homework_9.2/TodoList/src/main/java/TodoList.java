@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class TodoList {
     private ArrayList<String> todoList = new ArrayList<>();
@@ -37,10 +39,7 @@ public class TodoList {
         todoList.remove(index);
     }
 
-    public ArrayList<String> getTodos() {
-        for (int i = 0; i < todoList.size(); i++) {
-            System.out.println(i + " - " + todoList.get(i));
-        }
-        return todoList;
+    public List<String> getTodos() {
+        return Collections.unmodifiableList(todoList);
     }
 }
