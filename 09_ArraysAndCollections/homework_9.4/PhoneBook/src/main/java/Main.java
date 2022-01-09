@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
     public static PhoneBook phoneBook = new PhoneBook();

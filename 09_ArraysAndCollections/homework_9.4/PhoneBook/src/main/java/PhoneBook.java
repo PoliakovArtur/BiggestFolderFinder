@@ -49,7 +49,7 @@ public class PhoneBook {
         if (phoneBook.containsKey(name)) {
             TreeSet<String> phones = new TreeSet<>();
             phones.add(name + " - " + phoneBook.get(name));
-            return phones;
+            return Collections.unmodifiableSet(phones);
         }
         return new TreeSet<>();
     }
@@ -59,7 +59,7 @@ public class PhoneBook {
         for (String name : phoneBook.keySet()) {
             contacts.add(name + " - " + phoneBook.get(name));
         }
-        return contacts;
+        return Collections.unmodifiableSet(contacts);
     }
 
     private boolean isContainsPhone(String phone) {
