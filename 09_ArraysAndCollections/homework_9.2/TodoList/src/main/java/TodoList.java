@@ -1,29 +1,45 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class TodoList {
+    private ArrayList<String> todoList = new ArrayList<>();
+    public final static String TODO_NOT_EXIST = "Дело с таким номером не существует";
 
     public void add(String todo) {
-        // TODO: добавьте переданное дело в конец списка
+        todoList.add(todo);
+        System.out.println("Добавлено дело " + "\"" + todo + "\"");
     }
 
     public void add(int index, String todo) {
-        // TODO: добавьте дело на указаный индекс,
-        //  проверьте возможность добавления
+        if ((index > todoList.size() - 1) || (index < 0)) {
+            add(todo);
+            return;
+        }
+        todoList.add(index, todo);
+        System.out.println("Добавлено дело " + "\"" + todo + "\"");
     }
 
     public void edit(String todo, int index) {
-        // TODO: заменить дело на index переданным todo индекс,
-        //  проверьте возможность изменения
+        if ((index > todoList.size() - 1) || (index < 0)) {
+            System.out.println(TODO_NOT_EXIST);
+            return;
+        }
+        System.out.println("Дело " + "\"" + todoList.get(index) + "\"" + " заменено на "  + "\"" + todo + "\"");
+        todoList.remove(index);
+        todoList.add(index, todo);
     }
 
     public void delete(int index) {
-        // TODO: удалить дело находящееся по переданному индексу,
-        //  проверьте возможность удаления дела
+        if ((index > todoList.size() - 1) || (index < 0)) {
+            System.out.println(TODO_NOT_EXIST);
+            return;
+        }
+        System.out.println("Дело " + "\"" + todoList.get(index) + "\"" + " удалено");
+        todoList.remove(index);
     }
 
-    public ArrayList<String> getTodos() {
-        // TODO: вернуть список дел
-        return new ArrayList<>();
+    public List<String> getTodos() {
+        return Collections.unmodifiableList(todoList);
     }
-
 }
