@@ -5,8 +5,8 @@ public class Main {
 
     public static void main(String[] args) {
         while (true) {
+            System.out.println("Введите номер, имя или команду:");
             String input = scanner.nextLine();
-
             if (input.matches(PhoneBook.REGEX_PHONE)) {
                 if (phoneBook.getContactByPhone(input).isEmpty()) {
                     System.out.println("Такого номера нет в телефонной книге." +
