@@ -6,10 +6,10 @@ import java.nio.file.Paths;
 
 public class FileUtils {
 
-    public static long calculateFolderSize(String path) throws Exception {
+    public static long calculateFolderSize(String path)  {
         File folder = new File(path);
         if (!folder.exists()) {
-            throw new Exception("Неверный путь");
+            return -1;
         }
         return getFolderSize(folder);
     }
